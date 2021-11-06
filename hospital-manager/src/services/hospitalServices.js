@@ -1,7 +1,7 @@
 import {axiosService} from './requestService'
 import {authHeader} from '../utils/core/functions'
 
-export const addAgent = async (data) => {
+export const addHospital = async (data) => {
 	return axiosService
 		.post('/api/hospitals', (data = {...data}), {
 			//headers: authHeader(),
@@ -9,7 +9,7 @@ export const addAgent = async (data) => {
 		.then((res) => res.data)
 }
 
-export const getAgent = async (data) => {
+export const getHospital = async (data) => {
 	return axiosService
 		.get('/api/hospitals', {
 			//headers: authHeader(),
@@ -20,7 +20,7 @@ export const getAgent = async (data) => {
 		.then((res) => res.data)
 }
 
-export const deleteAgent = async (data) => {
+export const deleteHospital = async (data) => {
 	return axiosService
 		.delete(`/api/hospitals/${data}`, {
 			//headers: authHeader(),
@@ -28,7 +28,7 @@ export const deleteAgent = async (data) => {
 		.then((res) => res.data)
 }
 
-export const editAgent = async (data) => {
+export const editHospital = async (data) => {
 	return axiosService
 		.put(`/api/hospitals/${data.id}/`, (data = {...data}), {
 			//headers: authHeader(),
@@ -36,7 +36,7 @@ export const editAgent = async (data) => {
 		.then((res) => res.data)
 }
 
-export const getDetailAgent = async (data) => {
+export const getDetailHospital = async (data) => {
 	return axiosService
 		.get(`/api/hospitals/${data}`, {
 			//headers: authHeader(),

@@ -5,7 +5,7 @@ import {
 	getDetailHospital,
 	deleteHospital,
 	editHospital,
-} from '../../api/hospitalServices'
+} from '../../services/hospitalServices'
 import {
 	ADD_HOSPITAL_REQUEST,
 	ADD_HOSPITAL_SUCCESS,

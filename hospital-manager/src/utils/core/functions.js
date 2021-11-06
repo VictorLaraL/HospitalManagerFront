@@ -1,4 +1,4 @@
-import { store } from "../../redux/storeConfig/store";
+import { store } from "../../redux/store/store";
 
 export function authHeader() {
     const reduxStore = store.getState();
