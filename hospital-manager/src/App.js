@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { PersistGate } from 'redux-persist/integration/react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { persistor } from './redux/store/store'
+import LoginContainer from './containers/login/LoginContainer'
+import { ProtectedRoute } from './utils/protected-route/ProtectedRoute'
+import HospitalContainer from './containers/hospital/HospitalContainer'
+import './App.less'
+
+const App = () => (
+	<PersistGate loading={null} persistor={persistor}>
+		<Router>
+			<Switch>
+				<ProtectedRoute path="/Hospital" component={HospitalContainer} />
+				<Route path="/" component={LoginContainer} />
+			</Switch>
+		</Router>
+	</PersistGate>
+)
 
 export default App;
