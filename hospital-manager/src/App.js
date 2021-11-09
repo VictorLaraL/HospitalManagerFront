@@ -15,8 +15,8 @@ const App = () => (
 	<PersistGate loading={null} persistor={persistor}>
 		<Router>
 			<Switch>
-				<ProtectedRoute path="/Hospital" component={HospitalContainer} />
-				<Route path="/" component={LoginContainer} />
+				<Route path="/" component={HospitalContainer}/>
+				<Route path="/Login" component={LoginContainer}/>
 			</Switch>
 		</Router>
 	</PersistGate>
