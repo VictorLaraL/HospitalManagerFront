@@ -10,7 +10,7 @@ axiosService.interceptors.response.use(
     (error) => {
         const { status } = error.response;        
         if (status === parseInt(process.env.REACT_APP_API_UNAUTHORIZED_CODE)) {
-            store.dispatch(logoutUser());
+            //store.dispatch(logoutUser());
         }
         return Promise.reject(error);
     }

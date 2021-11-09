@@ -1,5 +1,5 @@
 import { takeLatest, call, put } from 'redux-saga/effects'
-import { getAuthUser } from '../../api/authUserServices'
+import { getAuthUser } from '../../services/authUserServices'
 import {
     GET_AUTH_USER_REQUEST,
     GET_AUTH_USER_SUCCESS,

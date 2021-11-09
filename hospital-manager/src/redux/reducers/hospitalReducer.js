@@ -31,8 +31,12 @@ const intialState = {
     erroeMessage:[],
     currentPage: 1,
     list:{
-        count:0,
-        results:[]
+        hospitals:[]
+    },
+    detail:{
+        id: '',
+        name:'',
+        city:'',
     }
 }
 

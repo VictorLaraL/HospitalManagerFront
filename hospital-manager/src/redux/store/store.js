@@ -12,7 +12,8 @@ const persistConfig = {
 	storage,
 	whiteList: ['authUserReducer'],
 	blacklist: [
-		'typeInsuranceReducer',
+		'hospitalReducer',
+		'patientReducer',
 	],
 }
 
