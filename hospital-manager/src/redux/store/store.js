@@ -13,6 +13,7 @@ const persistConfig = {
 	whiteList: ['authUserReducer'],
 	blacklist: [
 		'hospitalReducer',
+		'patientReducer',
 	],
 }
 

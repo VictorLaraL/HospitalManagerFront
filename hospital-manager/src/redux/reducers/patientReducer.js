@@ -45,7 +45,7 @@ const intialState = {
     }
 }
 
-export const hospitalReducer = (state=  intialState, action) => {
+export const patientReducer = (state=  intialState, action) => {
     switch (action.type) {
         case GET_PATIENT_REQUEST:
             return {

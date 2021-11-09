@@ -17,7 +17,7 @@ const SiderLayout = (props) => {
 
 	return (
 		<Sider
-		style={{background:"#5C215D"}}
+		style={{background:"#94BDF2"}}
 			breakpoint="lg"
 			collapsedWidth="0"
 			onBreakpoint={(broken) => {
@@ -28,14 +28,19 @@ const SiderLayout = (props) => {
 			}}
 		>
 			
-			<Menu theme="dark" style={{background:"#5C215D", color:"#fff"}} mode="inline">
+			<Menu theme="dark" style={{background:"#94BDF2", color:"#fff"}} mode="inline">
 				<Menu.Item key="1">
 					<Icon type="user"/>
 					<Link to={{pathname: '/hospitals'}} />
 					<span className="nav-text">Hospitales</span>
 				</Menu.Item>
+				<Menu.Item key="2">
+					<Icon type="user"/>
+					<Link to={{pathname:'/patients'}} />
+					<span className="nav-text">Pacientes</span>
+				</Menu.Item>
 				<Menu.Item
-					key="2"
+					key="3"
 					onClick={() => {
 						closeSesion()
 					}}

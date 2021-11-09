@@ -24,7 +24,7 @@ const LayoutInternal = (props) => {
                     </div>
                 </Content>
                 <Footer style={{ textAlign: "center" }}>
-                    Hoapital Manager ©2021
+                    Hospital Manager ©2021
                 </Footer>
             </Layout>
         </Layout>

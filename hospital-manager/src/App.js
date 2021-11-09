@@ -10,14 +10,16 @@ import { persistor } from './redux/store/store'
 import LoginContainer from './containers/login/LoginContainer'
 import { ProtectedRoute } from './utils/protected-route/ProtectedRoute'
 import HospitalContainer from './containers/hospital/HospitalContainer'
+import PatientContainer from './containers/patient/PatientContainer'
 import './App.less'
 
 const App = () => (
 	<PersistGate loading={null} persistor={persistor}>
 		<Router>
 			<Switch>
-				<Route path="/" component={HospitalContainer}/>
-				<Route path="/Login" component={LoginContainer}/>
+				<Route path="/patients" component={PatientContainer}/>
+				<Route path="/hospitals" component={HospitalContainer}/>
+				<Route path="/" component={LoginContainer}/>
 			</Switch>
 		</Router>
 	</PersistGate>
