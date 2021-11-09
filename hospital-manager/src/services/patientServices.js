@@ -1,18 +1,22 @@
 import {axiosService} from './requestService'
 import {authHeader} from '../utils/core/functions'
 
-export const addAgent = async (data) => {
+export const addPatient = async (data) => {
 	return axiosService
-		.post('/api/agent/', (data = {...data}), {
-			headers: authHeader(),
+		.post('/api/patients', (data = {...data}), {
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded'
+			},
 		})
 		.then((res) => res.data)
 }
 
-export const getAgent = async (data) => {
+export const getPatient = async (data) => {
 	return axiosService
-		.get('/api/agentlist', {
-			headers: authHeader(),
+		.get('/api/patients', {
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded'
+			},
 			params: {
 				page: data,
 			},
@@ -20,26 +24,32 @@ export const getAgent = async (data) => {
 		.then((res) => res.data)
 }
 
-export const deleteAgent = async (data) => {
+export const deletePatient = async (data) => {
 	return axiosService
-		.delete(`/api/agent/${data}`, {
-			headers: authHeader(),
+		.delete(`/api/patients/${data}`, {
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded'
+			}
 		})
 		.then((res) => res.data)
 }
 
-export const editAgent = async (data) => {
+export const editPatient = async (data) => {
 	return axiosService
-		.put(`/api/agent/${data.id}/`, (data = {...data}), {
-			headers: authHeader(),
+		.put(`/api/patient/${data.id}/`, (data = {...data}), {
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded'
+			}
 		})
 		.then((res) => res.data)
 }
 
-export const getDetailAgent = async (data) => {
+export const getDetailPatient = async (data) => {
 	return axiosService
-		.get(`/api/agent/${data}`, {
-			headers: authHeader(),
+		.get(`/api/patients/${data}`, {
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded'
+			}
 		})
 		.then((res) => res.data)
 }
