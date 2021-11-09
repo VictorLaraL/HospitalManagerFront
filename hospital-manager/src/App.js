@@ -4,6 +4,7 @@ import {
   Switch,
   Route
 } from "react-router-dom"
+import 'antd/dist/antd.css';
 
 import { persistor } from './redux/store/store'
 import LoginContainer from './containers/login/LoginContainer'
