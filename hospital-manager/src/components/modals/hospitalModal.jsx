@@ -12,8 +12,6 @@ const HospitalModal = (props) => {
 		modalCancel,
 		modalSubmit,
 		modalFormikInitialValues,
-		onNewRfc,
-		rfcList,
     } = props
 
     return (
@@ -36,8 +34,6 @@ const HospitalModal = (props) => {
 				>
 					{() => (
 						<HospitalForm
-							onNewRfc={onNewRfc}
-							rfcList={rfcList}
 							onCancel={modalCancel}
 						/>
 					)}

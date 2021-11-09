@@ -2,8 +2,13 @@ import {axiosService} from './requestService'
 import {authHeader} from '../utils/core/functions'
 
 export const addHospital = async (data) => {
+	
+	const params = new URLSearchParams()
+	params.append('name', data.name)
+	params.append('city', data.city)
+
 	return axiosService
-		.post('/api/hospitals', (data = {...data}), {
+		.post('/api/hospitals', params, {
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
@@ -35,8 +40,14 @@ export const deleteHospital = async (data) => {
 }
 
 export const editHospital = async (data) => {
+	
+	const params = new URLSearchParams()
+	params.append('name', data.name)
+	params.append('city', data.city)
+	console.log(params)
+
 	return axiosService
-		.put(`/api/hospitals/${data.id}/`, (data = {...data}), {
+		.put(`/api/hospitals/${data.id}/`, params, {
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			}

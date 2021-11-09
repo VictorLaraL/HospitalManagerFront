@@ -72,16 +72,17 @@ const PatientContainer = () => {
 	}
 
 	const handlePatientSubmit = (values, actions) => {
-		const formatAddValues = {
-			contact: {
-				names: values.name,
-				last_name: values.last_name,
-				second_last_name: values.second_last_name,
-				sex: values.sex,
-				birthday: values.birthday ? values.birthday.format('YYYY-MM-DD') : undefined,
-				inscription_date: values.inscription_date ? values.inscription_date.format('YYYY-MM-DD') : undefined,
-				id_hospital: values.id_hospital
-			}
+
+		console.log(values.birthday)
+
+		const formatAddValues = {		
+			names: values.names,
+			last_name: values.last_name,
+			second_last_name: values.second_last_name,
+			sex: values.sex,
+			birthday: values.birthday, //? values.birthday.format('YYYY-MM-DD') : undefined,
+			inscription_date: values.inscription_date, //? values.inscription_date.format('YYYY-MM-DD') : undefined,
+			id_hospital: values.id_hospital
 		}
 
 		const formatEditValues = {
@@ -90,8 +91,8 @@ const PatientContainer = () => {
 			last_name: values.last_name,
 			second_last_name: values.second_last_name,
 			sex: values.sex,
-			birthday: values.birthday ? values.birthday.format('YYYY-MM-DD') : undefined,
-			inscription_date: values.inscription_date ? values.inscription_date.format('YYYY-MM-DD') : undefined,
+			birthday: values.birthday,// ? values.birthday.format('YYYY-MM-DD') : undefined,
+			inscription_date: values.inscription_date,// ? values.inscription_date.format('YYYY-MM-DD') : undefined,
 			id_hospital: values.id_hospital
 		}
 

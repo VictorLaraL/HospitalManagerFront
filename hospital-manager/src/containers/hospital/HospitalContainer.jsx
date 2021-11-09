@@ -73,10 +73,8 @@ const HospitalContainer = () => {
 
 	const handleHospitalSubmit = (values, actions) => {
 		const formatAddValues = {
-			contact: {
-				name: values.name,
-				city: values.city,
-			}
+			name: values.name,
+			city: values.city,
 		}
 
 		const formatEditValues = {
