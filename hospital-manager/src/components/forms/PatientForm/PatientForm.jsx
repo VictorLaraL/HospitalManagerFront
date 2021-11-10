@@ -1,5 +1,5 @@
 import React from 'react'
-import {Form, Input, SubmitButton, DatePicker, Select} from 'formik-antd'
+import {Form, Input, SubmitButton, Select, DatePicker} from 'formik-antd'
 import {Button} from 'antd'
 
 const HospitalForm = (props) => {
@@ -34,7 +34,7 @@ const HospitalForm = (props) => {
 				label="Apellido materno"
 				required={true}
 			>
-				<Input name="second_last_namew" />
+				<Input name="second_last_name" />
 			</Form.Item>
             <Form.Item
 				name="sex"
@@ -52,14 +52,14 @@ const HospitalForm = (props) => {
 				label="F. Nacimiento"
 				required={true}
 			>
-                <DatePicker placeholder="Fecha" format={dateFormat} />
-			</Form.Item>
+                <DatePicker placeholder="Fecha" format={dateFormat} name="birthday"/>
+			</Form.Item> 
             <Form.Item
 				name="inscription_date"
 				label="F. Inscripcion"
 				required={true}
 			>
-                <DatePicker placeholder="Fecha" format={dateFormat} />
+                <DatePicker placeholder="Fecha" format={dateFormat} name="inscription_date"/>
 			</Form.Item>
             <Form.Item
 				name="id_hospital"
