@@ -2,7 +2,7 @@ import {axiosService} from './requestService'
 import {authHeader} from '../utils/core/functions'
 
 export const addPatient = async (data) => {
-	console.log(data)
+	
 	const params = new URLSearchParams()
 	params.append('names', data.names)
 	params.append('last_name', data.last_name)
@@ -11,13 +11,10 @@ export const addPatient = async (data) => {
 	params.append('birthday', data.birthday)
 	params.append('inscription_date', data.inscription_date)
 	params.append('id_hospital', data.id_hospital)
-	console.log(params)
 
 	return axiosService
 		.post('/api/patients', params, {
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			},
+			headers:authHeader(),
 		})
 		.then((res) => res.data)
 }
@@ -25,9 +22,7 @@ export const addPatient = async (data) => {
 export const getPatient = async (data) => {
 	return axiosService
 		.get('/api/patients', {
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			},
+			headers: authHeader(),
 			params: {
 				page: data,
 			},
@@ -38,9 +33,7 @@ export const getPatient = async (data) => {
 export const deletePatient = async (data) => {
 	return axiosService
 		.delete(`/api/patients/${data}`, {
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			}
+			headers: authHeader()
 		})
 		.then((res) => res.data)
 }
@@ -58,9 +51,7 @@ export const editPatient = async (data) => {
 
 	return axiosService
 		.put(`/api/patient/${data.id}/`, params, {
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			}
+			headers: authHeader()
 		})
 		.then((res) => res.data)
 }
@@ -68,9 +59,7 @@ export const editPatient = async (data) => {
 export const getDetailPatient = async (data) => {
 	return axiosService
 		.get(`/api/patients/${data}`, {
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			}
+			headers: authHeader()
 		})
 		.then((res) => res.data)
 }

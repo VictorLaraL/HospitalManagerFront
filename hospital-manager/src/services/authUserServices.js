@@ -7,7 +7,7 @@ export const getAuthUser = async (data) => {
 	params.append('password', data.password)    
 
     return axiosService
-        .post(`/api/token/`, params,{
+        .post(`/api/users/login/`, params,{
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},

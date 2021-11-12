@@ -22,19 +22,17 @@ import {
 	editPatientSuccessWatcher,
 } from './patientSaga'
 
+import {
+	addUserWatcher,
+} from './registerSaga'
+
 export function* rootSaga() {
-	//* Policy watchers
-	yield fork(addHospitalWatcher)
-	yield fork(getHospitalWatcher)
-	yield fork(addHospitalSuccessWatcher)
-	yield fork(deleteHospitalWatcher)
-	yield fork(deleteHospitalSuccessWatcher)
-	yield fork(getDetailHospitalWatcher)
-	yield fork(editHospitalWatcher)
-	yield fork(editHospitalSuccessWatcher)
 
     //* Authentication watcher
 	yield fork(getAuthUserWatcher)
+
+	//* Patient watchers
+	yield fork(addUserWatcher)
 
 	//* Patient watchers
 	yield fork(addPatientWatcher)
@@ -46,4 +44,13 @@ export function* rootSaga() {
 	yield fork(editPatientWatcher)
 	yield fork(editPatientSuccessWatcher)
 
+	//* Policy watchers
+	yield fork(addHospitalWatcher)
+	yield fork(getHospitalWatcher)
+	yield fork(addHospitalSuccessWatcher)
+	yield fork(deleteHospitalWatcher)
+	yield fork(deleteHospitalSuccessWatcher)
+	yield fork(getDetailHospitalWatcher)
+	yield fork(editHospitalWatcher)
+	yield fork(editHospitalSuccessWatcher)
 }
