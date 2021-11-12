@@ -26,7 +26,7 @@ const LoginContainer = () => {
 	}, [showErrorLoginMessage])
 
 	if (isAuthenticated) {
-		return <Redirect to="/dashboard" />
+		return <Redirect to="/patients" />
 	} else {
 		return (
 			<Layout className="page-login">

@@ -15,9 +15,7 @@ export const addPatient = async (data) => {
 
 	return axiosService
 		.post('/api/patients', params, {
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			},
+			headers:authHeader(),
 		})
 		.then((res) => res.data)
 }
@@ -25,9 +23,7 @@ export const addPatient = async (data) => {
 export const getPatient = async (data) => {
 	return axiosService
 		.get('/api/patients', {
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			},
+			headers: authHeader(),
 			params: {
 				page: data,
 			},
@@ -38,9 +34,7 @@ export const getPatient = async (data) => {
 export const deletePatient = async (data) => {
 	return axiosService
 		.delete(`/api/patients/${data}`, {
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			}
+			headers: authHeader()
 		})
 		.then((res) => res.data)
 }
@@ -58,9 +52,7 @@ export const editPatient = async (data) => {
 
 	return axiosService
 		.put(`/api/patient/${data.id}/`, params, {
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			}
+			headers: authHeader()
 		})
 		.then((res) => res.data)
 }
@@ -68,9 +60,7 @@ export const editPatient = async (data) => {
 export const getDetailPatient = async (data) => {
 	return axiosService
 		.get(`/api/patients/${data}`, {
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			}
+			headers: authHeader()
 		})
 		.then((res) => res.data)
 }
