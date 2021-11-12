@@ -2,7 +2,7 @@ import {axiosService} from './requestService'
 import {authHeader} from '../utils/core/functions'
 
 export const addPatient = async (data) => {
-	console.log(data)
+	
 	const params = new URLSearchParams()
 	params.append('names', data.names)
 	params.append('last_name', data.last_name)
@@ -11,7 +11,6 @@ export const addPatient = async (data) => {
 	params.append('birthday', data.birthday)
 	params.append('inscription_date', data.inscription_date)
 	params.append('id_hospital', data.id_hospital)
-	console.log(params)
 
 	return axiosService
 		.post('/api/patients', params, {

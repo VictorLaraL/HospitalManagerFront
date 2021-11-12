@@ -14,6 +14,7 @@ const persistConfig = {
 	blacklist: [
 		'hospitalReducer',
 		'patientReducer',
+		'registerReducer',
 	],
 }
 
