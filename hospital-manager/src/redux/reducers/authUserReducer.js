@@ -34,9 +34,9 @@ import {
             return {
                 ...state,
                 isLoadingAuthRequest: false,
-                showErrorLoginMessage: true
+                showErrorLoginMessage: true,
+                isAuthenticated: false
             }
-  
         case LOGOUT_USER:
             return {
                 ...initialState
